@@ -7,7 +7,8 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <errno.h>
-#include <birchutils.h>
+#include "birchutils.h"
+#include "tokens.h"
 
 typedef unsigned char int8;
 typedef unsigned short int int16;
@@ -16,9 +17,9 @@ typedef unsigned long long int int64;
 
 struct s_string {
     int16 length;
-    int8 &cur;
+    int8 *cur;
     int8 data[];
-}
+};
 typedef struct s_string String;
 
 #define $1 (int8 *)
